@@ -7,18 +7,6 @@ import heroImg from "../media/nivi_hero_off.png";
 import CustomButton from "./CustomButton";
 import ScrollTo from "./Scroll";
 const Hero = () => {
-  const CustomBox = styled(Box)(({ theme }) => ({
-    display: "flex",
-    justifyContent: "center",
-    gap: theme.spacing(5),
-    marginTop: theme.spacing(10),
-    [theme.breakpoints.down("md")]: {
-      flexDirection: "column",
-      alignItems: "center",
-      textAlign: "center",
-    },
-  }));
-
   const Title = styled(Typography)(({ theme }) => ({
     fontSize: "25px",
     color: "#ffffff",
@@ -33,7 +21,7 @@ const Hero = () => {
       <Container>
         <Navbar />
         <Grid container alignItems={"center"}>
-        <Grid md={4} xs={12} >
+        <Grid md={4} xs={12} order={{ xs: 1, md: 0 }} >
             <Title variant="h1">
               Asigna de forma automática
               tus clientes en <span style={{ color: '#1FB6A3' }}> WhatsApp </span>
@@ -52,12 +40,11 @@ const Hero = () => {
               }}
             />
           </Grid>
-
           <Grid md={8} xs={12} display={"flex"} flexDirection={"column"} justifyContent="center">
             <img
               src={heroImg}
               alt="heroImg"
-              style={{ maxWidth: "100%" }}
+              // style={{ maxWidth: "100%" }}
             />
           </Grid>
         </Grid>

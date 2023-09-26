@@ -18,7 +18,7 @@ const TitlePlan = styled(Typography)(({ theme }) => ({
 ];
 export default function Pricing() {
   return (
-    <Container maxWidth id="pricing" sx={{ paddingY: 8, backgroundColor:"#f4f4f4" }}>
+    <Container maxWidth="100vw" id="pricing" sx={{ paddingY: 8, backgroundColor:"#f4f4f4" }}>
       <TitlePlan variant="h2" color="initial">
       Selecciona el <span style={{ color: '#1FB6A3' }}> plan </span> que prefieras
       </TitlePlan>

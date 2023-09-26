@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, ThemeProvider, createTheme } from '@mui/system';
+import { Box} from '@mui/system';
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import logoImg from "../media/nivi_logo.svg";
@@ -70,6 +70,15 @@ const listLinks =
         <ArrowBackIosNewIcon sx={{fill:"#fff"}}/>
         </ListItemButton>
       </ListItem>
+      <ListItem sx={{justifyContent:"center"}}>
+      <CustomButton
+          backgroundColor="#1FB6A3"
+          color="#fff"
+          buttonText="Ingresar"
+          
+        />
+      </ListItem>
+      
       {listLinks.map((item, index) => (
             <ListItem key={index} disablePadding className="custom-hover-color">
               <ListItemButton >
@@ -78,6 +87,7 @@ const listLinks =
             </ListItem>
           )
         )}
+        
       </List>
     </Box>
   );
@@ -143,7 +153,7 @@ const listLinks =
       <Box>
       <NavbarLinksBox>
         {listLinks.map((item, index)=>(
-            <NavLink variant="body2" onClick={() => { ScrollTo(item.link)}}>{item.text}</NavLink>
+            <NavLink key={index} variant="body2" onClick={() => { ScrollTo(item.link)}}>{item.text}</NavLink>
         ))}
         </NavbarLinksBox>
       </Box>
@@ -163,11 +173,13 @@ const listLinks =
           >
             {list("right")}
           </Drawer>
+          <Box display={{ xs: 'none', md: 'block' }}>
         <CustomButton
           backgroundColor="#1FB6A3"
           color="#fff"
           buttonText="Ingresar"
         />
+        </Box>
       </Box>
     </NavbarContainer>
   );

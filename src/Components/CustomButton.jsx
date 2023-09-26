@@ -9,7 +9,6 @@ const CustomButton = ({
   guideBtn,
   getStartedBtn,
   onClick,
-  
 }) => {
  
   const CustomButton = styled(Button)(({ theme }) => ({
