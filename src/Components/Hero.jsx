@@ -1,4 +1,5 @@
 import { Box, Button, styled, Typography } from "@mui/material";
+import Grid from '@mui/system/Unstable_Grid';
 import { Container } from "@mui/system";
 import React from "react";
 import Navbar from "./Navbar";
@@ -31,21 +32,14 @@ const Hero = () => {
     <Box sx={{ backgroundColor: "#4C4C58", minHeight: "100vh" }}>
       <Container>
         <Navbar />
-        <CustomBox>
-          <Box 
-          sx={{ 
-            flex: "1", 
-            display:"flex", 
-            flexDirection: "column", 
-            alignItems:"start", 
-            justifyContent:"center" 
-            }}>
+        <Grid container alignItems={"center"}>
+        <Grid md={4} xs={12} >
             <Title variant="h1">
-              Asigna de forma automática <br></br>
-              tus clientes en <span style={{ color: '#1FB6A3' }}> WhatsApp </span><br></br>
+              Asigna de forma automática
+              tus clientes en <span style={{ color: '#1FB6A3' }}> WhatsApp </span>
               y optimiza tus ventas
             </Title>
-            <Typography variant="body1" color="#ffffff" marginBottom="20px">
+            <Typography variant="body1" color="#ffffff" marginBottom="20px" display={{ xs: 'none', md: 'block' }}>
             No pierdas más oportunidades comerciales. Integra el WhatsApp oficial de tu marca con NIVI y atiende a tus clientes en menor tiempo.
             </Typography>
             <CustomButton
@@ -57,16 +51,16 @@ const Hero = () => {
                 ScrollTo("pricing")
               }}
             />
-          </Box>
+          </Grid>
 
-          <Box sx={{ flex: "1.25" }}>
+          <Grid md={8} xs={12} display={"flex"} flexDirection={"column"} justifyContent="center">
             <img
               src={heroImg}
               alt="heroImg"
               style={{ maxWidth: "100%" }}
             />
-          </Box>
-        </CustomBox>
+          </Grid>
+        </Grid>
       </Container>
     </Box>
   );

@@ -48,7 +48,7 @@ const About = () => {
 
 
   return (
-  <Box sx={{ py: 10 }} style={boxStyle} id="about">
+  <Box sx={{ py: 10, display:"flex", alignItems:"center" }} style={boxStyle} id="about">
    <Container >
     <Grid container>
       <Grid md={4} xs={12}>

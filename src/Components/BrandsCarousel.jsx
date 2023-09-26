@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper';
 import { Pagination } from 'swiper/modules';
 import { Box, Container, styled } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
@@ -14,7 +15,6 @@ import brand6 from '../media/BRANDS/brand1.png';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Padding } from '@mui/icons-material';
 
 export default () => {
   const theme = useTheme();
@@ -39,7 +39,9 @@ export default () => {
     modules={[Pagination]}
     spaceBetween={50}
     slidesPerView={slidesPerView}
-    pagination={{ clickable: true }}
+    autoplay={{ delay: 3000 }} 
+    loop={true}
+    // pagination={{ clickable: true }}
   >
      {logos.map((logo, index) => (
         <SwiperSlide key={index}>

@@ -1,26 +1,50 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
+import { Box, ThemeProvider, createTheme } from '@mui/system';
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import logoImg from "../media/nivi_logo.svg";
 import { Container } from "@mui/system";
 import CustomButton from "./CustomButton";
 import ScrollTo from "./Scroll";
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import Drawer from '@mui/material/Drawer';
+import '../index.css';
 import {
-  Drawer,
-  List,
+   List,
   ListItem,
   ListItemButton,
   ListItemText,
   styled,
 } from "@mui/material";
 import { useState } from "react";
+const drawStyle = {
+  backgroundColor: '#000', 
+  display:'flex',
+  alignItems: 'stretch',
+};
 
 export const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState({
     left: false,
   });
-
+const listLinks = 
+[{
+  text: "Inicio",
+  link: "home"
+},
+{
+  text: "Nosotros",
+  link: "about"
+},
+{
+  text: "Comprar",
+  link: "pricing"
+},
+{
+  text: "Contacto",
+  link: "contact"
+}
+];
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -34,24 +58,22 @@ export const Navbar = () => {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: "100vw" }}
+      sx={{ width: "100vw", height:"100vh"}}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
+      style={drawStyle}
     >
-      <List>
-        {["atrás","Incio", "Nosotros", "Comprar", "Contacto"].map(
-          (text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                {/* <ListItemIcon>
-                  {index === 0 && <HomeIcon />}
-                  {index === 1 && <FeaturedPlayListIcon />}
-                  {index === 2 && <MiscellaneousServicesIcon />}
-                  {index === 3 && <ListAltIcon />}
-                  {index === 4 && <ContactsIcon />}
-                </ListItemIcon> */}
-                <ListItemText primary={text} />
+      <List sx={{width:"100%"}}>
+      <ListItem disablePadding>
+        <ListItemButton>
+        <ArrowBackIosNewIcon sx={{fill:"#fff"}}/>
+        </ListItemButton>
+      </ListItem>
+      {listLinks.map((item, index) => (
+            <ListItem key={index} disablePadding className="custom-hover-color">
+              <ListItemButton >
+                <ListItemText primary={item.text} sx={{textAlign:"center"}}  onClick={() => { ScrollTo(item.link)}} />
               </ListItemButton>
             </ListItem>
           )
@@ -120,10 +142,9 @@ export const Navbar = () => {
       </Box>
       <Box>
       <NavbarLinksBox>
-          <NavLink variant="body2" onClick={() => { ScrollTo("home")}}>Inicio</NavLink>
-          <NavLink variant="body2" onClick={() => { ScrollTo("about")}}>Nosotros</NavLink>
-          <NavLink variant="body2" onClick={() => { ScrollTo("pricing")}}>Comprar</NavLink>
-          <NavLink variant="body2" onClick={() => { ScrollTo("contact")}}>Contacto</NavLink>
+        {listLinks.map((item, index)=>(
+            <NavLink variant="body2" onClick={() => { ScrollTo(item.link)}}>{item.text}</NavLink>
+        ))}
         </NavbarLinksBox>
       </Box>
       <Box
@@ -135,7 +156,7 @@ export const Navbar = () => {
         }}
       >
         <CustomMenuIcon onClick={toggleDrawer("right", true)} />
-          <Drawer
+          <Drawer 
             anchor="right"
             open={mobileMenu["right"]}
             onClose={toggleDrawer("right", false)}

@@ -1,10 +1,9 @@
-import React from 'react';
-import { Link, Element, scroller } from 'react-scroll';
+import {scroller } from 'react-scroll';
     const scrollToSection = (sectionId) => {
       scroller.scrollTo(sectionId, {
-        duration: 800, // Duración de la animación en milisegundos
-        delay: 0, // Retardo antes de iniciar la animación
-        smooth: 'easeInOutQuart', // Función de animación de "ease"
+        duration: 800, 
+        delay: 0, 
+        smooth: 'easeInOutQuart', 
       });
     };
 export default scrollToSection;

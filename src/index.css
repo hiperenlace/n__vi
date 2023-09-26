@@ -17,3 +17,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.custom-hover-color {
+  color: #ffffff; 
+  margin-bottom: 18px;
+}
+.custom-hover-color:hover {
+  color: #1FB6A3; 
+}

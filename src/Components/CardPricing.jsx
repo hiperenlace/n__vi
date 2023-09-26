@@ -13,10 +13,7 @@ const CardPricing = ({
   titulo,
   precio,
   buttonText,
-  heroBtn,
-  guideBtn,
   listItems,
-  getStartedBtn,
   resaltado,
   onClick,
   
@@ -40,7 +37,7 @@ const CardPricing = ({
       }));
   
   return (
-    <StyledCard>
+    <StyledCard> 
     <CardContent>
     <TitleCard gutterBottom>
       {titulo}
