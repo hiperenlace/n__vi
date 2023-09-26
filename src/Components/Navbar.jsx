@@ -74,8 +74,9 @@ const listLinks =
       <CustomButton
           backgroundColor="#1FB6A3"
           color="#fff"
+          colorHover="#fff"
+          colorBorder="#fff"
           buttonText="Ingresar"
-          
         />
       </ListItem>
       
@@ -177,6 +178,8 @@ const listLinks =
         <CustomButton
           backgroundColor="#1FB6A3"
           color="#fff"
+          colorHover="#fff"
+          colorBorder="#fff"
           buttonText="Ingresar"
         />
         </Box>

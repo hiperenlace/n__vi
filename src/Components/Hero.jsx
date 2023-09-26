@@ -13,11 +13,13 @@ const Hero = () => {
     fontWeight: "bold",
     margin: theme.spacing(4, 0, 4, 0),
     [theme.breakpoints.down("sm")]: {
-      fontSize: "40px",
+      fontSize: "22px",
+      textAlign: "center"
     },
   }));
+  
   return (
-    <Box sx={{ backgroundColor: "#4C4C58", minHeight: "100vh" }}>
+    <Box sx={{ backgroundColor: "#4C4C58"}} minHeight={{ xs: "50vh", md: "100vh" }} paddingBottom={"50px"}>
       <Container>
         <Navbar />
         <Grid container alignItems={"center"}>
@@ -34,6 +36,8 @@ const Hero = () => {
               backgroundColor="#1FB6A3"
               color="#fff"
               buttonText="Comprar Nivi"
+              colorHover="#fff"
+              colorBorder="#fff"
               heroBtn={true}
               onClick={() => {
                 ScrollTo("pricing")

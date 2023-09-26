@@ -4,11 +4,14 @@ import React from "react";
 const CustomButton = ({
   backgroundColor,
   color,
+  colorHover,
+  colorBorder,
   buttonText,
   heroBtn,
   guideBtn,
   getStartedBtn,
   onClick,
+  marginTop
 }) => {
  
   const CustomButton = styled(Button)(({ theme }) => ({
@@ -22,18 +25,19 @@ const CustomButton = ({
     textTransform: "none",
     display: "block",
     border: "2px solid transparent",
+    marginTop: marginTop,
     "&:hover": {
       backgroundColor: "transparent",
-      color: color,
-      borderColor: color,
+      color: colorHover,
+      borderColor: colorBorder,
     },
     [theme.breakpoints.down("md")]: {
       margin: (heroBtn || getStartedBtn) && theme.spacing(0, "auto", 3, "auto"),
-      width: (heroBtn || getStartedBtn) && "90%",
+      width: (heroBtn || getStartedBtn) && "50%",
     },
     [theme.breakpoints.down("sm")]: {
       marginTop: guideBtn && theme.spacing(3),
-      width: guideBtn && "90%",
+      width: guideBtn && "50%",
     }
   }));
   

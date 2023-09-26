@@ -22,7 +22,7 @@ export default function Pricing() {
       <TitlePlan variant="h2" color="initial">
       Selecciona el <span style={{ color: '#1FB6A3' }}> plan </span> que prefieras
       </TitlePlan>
-    <Box sx={{ minWidth: "275px", maxWidth:"90%", gap:"25px" }} display={"flex"} flexWrap={"wrap"} justifyContent={"center"}>
+    <Box sx={{ minWidth: "275px", maxWidth:"100%" }} gap={"25px"} display={"flex"} flexWrap={"wrap"} justifyContent={"center"}>
       <CardPricing
       backgroundColor="#ffffff"
       color="#1A192B"
