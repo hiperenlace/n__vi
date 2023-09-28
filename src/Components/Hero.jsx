@@ -17,20 +17,20 @@ const Hero = () => {
       textAlign: "center"
     },
   }));
-  
+
   return (
-    <Box sx={{ backgroundColor: "#4C4C58"}} minHeight={{ xs: "50vh", md: "100vh" }} paddingBottom={"50px"}>
+    <Box sx={{ backgroundColor: "#4c4c57" }} minHeight={{ xs: "100%", md: "100vh" }}>
+      <Navbar />
       <Container>
-        <Navbar />
-        <Grid container alignItems={"center"}>
-        <Grid md={4} xs={12} order={{ xs: 1, md: 0 }} >
+        <Grid container alignItems={"center"} height={{ xs: "100%", md: "calc(100vh - 100px)" }}>
+          <Grid md={4} xs={12} order={{ xs: 1, md: 0 }} >
             <Title variant="h1">
               Asigna de forma automática
               tus clientes en <span style={{ color: '#1FB6A3' }}> WhatsApp </span>
               y optimiza tus ventas
             </Title>
             <Typography variant="body1" color="#ffffff" marginBottom="20px" display={{ xs: 'none', md: 'block' }}>
-            No pierdas más oportunidades comerciales. Integra el WhatsApp oficial de tu marca con NIVI y atiende a tus clientes en menor tiempo.
+              No pierdas más oportunidades comerciales. Integra el WhatsApp oficial de tu marca con NIVI y atiende a tus clientes en menor tiempo.
             </Typography>
             <CustomButton
               backgroundColor="#1FB6A3"
@@ -48,7 +48,7 @@ const Hero = () => {
             <img
               src={heroImg}
               alt="heroImg"
-              // style={{ maxWidth: "100%" }}
+            // style={{ maxWidth: "100%" }}
             />
           </Grid>
         </Grid>

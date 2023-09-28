@@ -34,21 +34,21 @@ export default () => {
   ];
   return (
     <Box>
-    <Swiper
-    // install Swiper modules
-    modules={[Pagination]}
-    spaceBetween={50}
-    slidesPerView={slidesPerView}
-    autoplay={{ delay: 3000 }} 
-    loop={true}
-    // pagination={{ clickable: true }}
-  >
-     {logos.map((logo, index) => (
-        <SwiperSlide key={index}>
-          <img src={logo} height={"70px"} alt={`${logo} ${index}`} className={logo} />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+      <Swiper
+        // install Swiper modules
+        modules={[Pagination]}
+        spaceBetween={50}
+        slidesPerView={slidesPerView}
+        autoplay={{ delay: 3000 }}
+        loop={true}
+      // pagination={{ clickable: true }}
+      >
+        {logos.map((logo, index) => (
+          <SwiperSlide key={index}>
+            <img src={logo} height={"70px"} alt={`${logo} ${index}`} className={logo} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </Box>
   );
 };

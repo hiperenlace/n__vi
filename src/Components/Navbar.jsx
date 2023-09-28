@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box} from '@mui/system';
+import { Box } from '@mui/system';
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import logoImg from "../media/nivi_logo.svg";
@@ -10,7 +10,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import Drawer from '@mui/material/Drawer';
 import '../index.css';
 import {
-   List,
+  List,
   ListItem,
   ListItemButton,
   ListItemText,
@@ -18,8 +18,8 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 const drawStyle = {
-  backgroundColor: '#000', 
-  display:'flex',
+  backgroundColor: '#000',
+  display: 'flex',
   alignItems: 'stretch',
 };
 
@@ -27,24 +27,24 @@ export const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState({
     left: false,
   });
-const listLinks = 
-[{
-  text: "Inicio",
-  link: "home"
-},
-{
-  text: "Nosotros",
-  link: "about"
-},
-{
-  text: "Comprar",
-  link: "pricing"
-},
-{
-  text: "Contacto",
-  link: "contact"
-}
-];
+  const listLinks =
+    [{
+      text: "Inicio",
+      link: "home"
+    },
+    {
+      text: "Nosotros",
+      link: "about"
+    },
+    {
+      text: "Comprar",
+      link: "pricing"
+    },
+    {
+      text: "Contacto",
+      link: "contact"
+    }
+    ];
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -58,37 +58,37 @@ const listLinks =
 
   const list = (anchor) => (
     <Box
-      sx={{ width: "100vw", height:"100vh"}}
+      sx={{ width: "100vw", height: "100vh" }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
       style={drawStyle}
     >
-      <List sx={{width:"100%"}}>
-      <ListItem disablePadding>
-        <ListItemButton>
-        <ArrowBackIosNewIcon sx={{fill:"#fff"}}/>
-        </ListItemButton>
-      </ListItem>
-      <ListItem sx={{justifyContent:"center"}}>
-      <CustomButton
-          backgroundColor="#1FB6A3"
-          color="#fff"
-          colorHover="#fff"
-          colorBorder="#fff"
-          buttonText="Ingresar"
-        />
-      </ListItem>
-      
-      {listLinks.map((item, index) => (
-            <ListItem key={index} disablePadding className="custom-hover-color">
-              <ListItemButton >
-                <ListItemText primary={item.text} sx={{textAlign:"center"}}  onClick={() => { ScrollTo(item.link)}} />
-              </ListItemButton>
-            </ListItem>
-          )
+      <List sx={{ width: "100%" }}>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ArrowBackIosNewIcon sx={{ fill: "#fff" }} />
+          </ListItemButton>
+        </ListItem>
+        <ListItem sx={{ justifyContent: "center" }}>
+          <CustomButton
+            backgroundColor="#1FB6A3"
+            color="#fff"
+            colorHover="#fff"
+            colorBorder="#fff"
+            buttonText="Ingresar"
+          />
+        </ListItem>
+
+        {listLinks.map((item, index) => (
+          <ListItem key={index} disablePadding className="custom-hover-color">
+            <ListItemButton >
+              <ListItemText primary={item.text} sx={{ textAlign: "center" }} onClick={() => { ScrollTo(item.link) }} />
+            </ListItemButton>
+          </ListItem>
+        )
         )}
-        
+
       </List>
     </Box>
   );
@@ -103,7 +103,7 @@ const listLinks =
   }));
   const NavbarLinksBox = styled(Box)(({ theme }) => ({
     display: "flex",
-    alignItems: "center", 
+    alignItems: "center",
     justifyContent: "left",
     gap: theme.spacing(3),
     [theme.breakpoints.down("md")]: {
@@ -152,10 +152,10 @@ const listLinks =
         </Box>
       </Box>
       <Box>
-      <NavbarLinksBox>
-        {listLinks.map((item, index)=>(
-            <NavLink key={index} variant="body2" onClick={() => { ScrollTo(item.link)}}>{item.text}</NavLink>
-        ))}
+        <NavbarLinksBox>
+          {listLinks.map((item, index) => (
+            <NavLink key={index} variant="body2" onClick={() => { ScrollTo(item.link) }}>{item.text}</NavLink>
+          ))}
         </NavbarLinksBox>
       </Box>
       <Box
@@ -167,21 +167,21 @@ const listLinks =
         }}
       >
         <CustomMenuIcon onClick={toggleDrawer("right", true)} />
-          <Drawer 
-            anchor="right"
-            open={mobileMenu["right"]}
-            onClose={toggleDrawer("right", false)}
-          >
-            {list("right")}
-          </Drawer>
-          <Box display={{ xs: 'none', md: 'block' }}>
-        <CustomButton
-          backgroundColor="#1FB6A3"
-          color="#fff"
-          colorHover="#fff"
-          colorBorder="#fff"
-          buttonText="Ingresar"
-        />
+        <Drawer
+          anchor="right"
+          open={mobileMenu["right"]}
+          onClose={toggleDrawer("right", false)}
+        >
+          {list("right")}
+        </Drawer>
+        <Box display={{ xs: 'none', md: 'block' }}>
+          <CustomButton
+            backgroundColor="#1FB6A3"
+            color="#fff"
+            colorHover="#fff"
+            colorBorder="#fff"
+            buttonText="Ingresar"
+          />
         </Box>
       </Box>
     </NavbarContainer>

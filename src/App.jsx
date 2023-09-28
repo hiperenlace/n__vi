@@ -11,8 +11,8 @@ function App() {
     <>
       <Hero />
       <About />
-      <Brands/>
       <Pricing />
+      <Brands/>
       <Contact/>
       <Footer />
     </>

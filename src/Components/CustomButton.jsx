@@ -11,7 +11,8 @@ const CustomButton = ({
   guideBtn,
   getStartedBtn,
   onClick,
-  marginTop
+  marginTop,
+  width
 }) => {
  
   const CustomButton = styled(Button)(({ theme }) => ({
@@ -24,6 +25,7 @@ const CustomButton = ({
     borderRadius: "32px",
     textTransform: "none",
     display: "block",
+    width: width,
     border: "2px solid transparent",
     marginTop: marginTop,
     "&:hover": {

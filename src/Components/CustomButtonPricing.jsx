@@ -9,13 +9,13 @@ const CustomButtonPricing = ({
   guideBtn,
   getStartedBtn,
   onClick,
-  
+
 }) => {
- 
+
   const CustomButton = styled(Button)(({ theme }) => ({
     backgroundColor: backgroundColor,
     width: "100%",
-    color:  `${color}!important`,
+    color: `${color}!important`,
     fontWeight: "400",
     fontSize: "14px",
     cursor: "pointer",
@@ -38,8 +38,8 @@ const CustomButtonPricing = ({
       width: guideBtn && "90%",
     }
   }));
-  
-  
+
+
   return <CustomButton onClick={onClick}>{buttonText}</CustomButton>;
 };
 

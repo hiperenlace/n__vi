@@ -24,3 +24,20 @@ code {
 .custom-hover-color:hover {
   color: #1FB6A3; 
 }
+.formNivi {
+  border: #fff;
+  color: #fff;
+}
+.formNivi input {
+  border: #fff 1px !important;
+  color: #fff;
+}
+.formNivi div:before {
+  border-bottom: #fff 1px solid !important; 
+}
+.formNivi div:after {
+  border-bottom: #fff 1px solid !important; 
+}
+.formNivi>label {
+  color: #fff !important;
+}

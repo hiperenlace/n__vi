@@ -1,27 +1,27 @@
-import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import { Container } from '@mui/material';
-
-// const listItems = [
-//   "Lorem Ipsum dolor sit amet",
-//   "Lorem Ipsum dolor sit amet",
-//   "Lorem Ipsum dolor sit amet",
-//   "Lorem Ipsum dolor sit amet",
-//   "Lorem Ipsum dolor sit amet",
-//   "Lorem Ipsum dolor sit amet",
-// ];
+import * as React from "react";
+import { Box, Container, Grid } from "@mui/material";
+import ContactForm from "./ContactForm";
+import BackGroundImg from "../media/CONTACT.jpg";
+const boxStyle = {
+    backgroundImage: `url(${BackGroundImg})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "top center",
+    minHeight: "630px"
+};
 
 const Contact = () => {
-    return(
-        <Container id="contact">
-        <TextField id="1" label="Nombre" variant="standard" />
-        <TextField id="2" label="Apellido" variant="standard" />
-        <TextField id="3" label="Correo Electrónico" variant="standard" />
-        <TextField id="4" label="Número de teléfono" variant="standard" />
-        <TextField id="5" label="Mensaje" variant="standard" />
-        </Container>
+    return (
+        <Box sx={{ py: 10, display: "flex", alignItems: "center", height: "630px" }} style={boxStyle} id="about">
+            <Container id="contact">
+                <Grid container spacing={2}>
+                    <Grid item xs={7}>
+                        <ContactForm></ContactForm>
+                    </Grid>
+                </Grid>
+
+            </Container>
+        </Box>
     );
 }
-
-
 export default Contact;
