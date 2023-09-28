@@ -16,7 +16,7 @@ const listItemsBase = [
   "Lorem Ipsum dolor sit amet 5",
   "Lorem Ipsum dolor sit amet 6",
 ];
-export default function Pricing() {
+export default function Price() {
   return (
     <Container maxWidth="100vw" id="pricing" sx={{ paddingY: 8, backgroundColor: "#f4f4f4" }}>
       <TitlePlan variant="h2" color="initial">

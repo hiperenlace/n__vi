@@ -41,3 +41,8 @@ code {
 .formNivi>label {
   color: #fff !important;
 }
+.swiper-slide {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}

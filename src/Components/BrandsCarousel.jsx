@@ -22,7 +22,7 @@ export default () => {
   const isSm = useMediaQuery(theme.breakpoints.up('sm'));
   const isLg = useMediaQuery(theme.breakpoints.up('lg'));
 
-  const slidesPerView = isLg ? 5 : isSm ? 4 : 1; // 3 slides para lg, 2 slides para md, 1 slide para xs
+  const slidesPerView = isLg ? 5 : isSm ? 3 : 1; // 3 slides para lg, 2 slides para md, 1 slide para xs
 
   const logos = [
     brand1,
@@ -39,7 +39,7 @@ export default () => {
         modules={[Pagination]}
         spaceBetween={50}
         slidesPerView={slidesPerView}
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 3000, disableOnInteraction:false }}
         loop={true}
       // pagination={{ clickable: true }}
       >

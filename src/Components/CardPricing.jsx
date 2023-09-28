@@ -30,6 +30,7 @@ const CardPricing = ({
     border: 'none',
     borderRadius: theme.spacing(2),
     boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+    padding:"32px 16px",
     transition: 'ease-in-out .2s all',
     "&:hover": {
       transform: 'scale(1.03)'
@@ -38,7 +39,7 @@ const CardPricing = ({
 
   return (
     <StyledCard>
-      <CardContent>
+      <CardContent sx={{padding:"0"}}>
         <TitleCard gutterBottom>
           {titulo}
         </TitleCard>

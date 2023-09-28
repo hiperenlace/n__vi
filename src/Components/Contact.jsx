@@ -15,7 +15,7 @@ const Contact = () => {
         <Box sx={{ py: 10, display: "flex", alignItems: "center", height: "630px" }} style={boxStyle} id="about">
             <Container id="contact">
                 <Grid container spacing={2}>
-                    <Grid item xs={7}>
+                    <Grid item xs={12} sm={7}>
                         <ContactForm></ContactForm>
                     </Grid>
                 </Grid>
